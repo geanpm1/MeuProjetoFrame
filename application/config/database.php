@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'gean',
+	'hostname' => 'mysql380.umbler.com',
+	'username' => 'geanpm1',
+	'password' => '96953587gean',
+	'database' => 'meuprojeto-frame',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
