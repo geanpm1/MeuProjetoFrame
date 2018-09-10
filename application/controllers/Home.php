@@ -1,4 +1,4 @@
-<?php
+<?php  
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {
     function __construct() {
@@ -8,12 +8,12 @@ class Home extends CI_Controller {
         
     }
     public function index() {
-//        $this->load->view('template/header');
+        $this->load->view('template/header');
         $dados['acronico'] = "MPF";
         $dados['completo'] = "Meu Projeto Framework";
         $dados['contatos'] = $this->contatos->listar();
         $this->load->view('home',$dados);
-//        $this->load->view('template/footer');
+        $this->load->view('template/footer');
     }
     
 }

@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql380.umbler.com',
+	'hostname' => 'mysql380.umbler.com:41890',
 	'username' => 'geanpm1',
 	'password' => '96953587gean',
 	'database' => 'meuprojeto-frame',
