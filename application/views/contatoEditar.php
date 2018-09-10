@@ -25,7 +25,7 @@
             <input class="btn btn-success" type="submit" value="Salvar"/>
             <?php form_close(); ?>
             <p></p>
-            <a a class="btn btn-primary"href="<?php echo base_url() . 'contato'; ?>">Cancelar</a>
+            <a a class="btn btn-success"href="<?php echo base_url() . 'contato'; ?>">Cancelar</a>
         </div>
         <div class="col-xs-1 col-sm-1 col-lg-3"></div>
     </div>
