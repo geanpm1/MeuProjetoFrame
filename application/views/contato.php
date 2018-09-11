@@ -25,7 +25,7 @@
 
 
     <input class="btn btn-success" type="submit" value="Salvar"/>
-    <input class="btn btn-secondary" type="reset" value="Limpar"/>
+    <input class="btn btn-danger" type="reset" value="Limpar"/>
 
     <?php form_close(); ?>
        
