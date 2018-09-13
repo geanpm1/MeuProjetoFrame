@@ -30,7 +30,10 @@
     <?php form_close(); ?>
        
     <div>
-        <table class="table table-striped table-dark"  >
+<!--        <table class="table table-striped table-dark"  >-->
+        <!--Datatables-->
+        <table id="contatos" class="table table-striped table-bordered" style="width:100%">
+            
             <caption>Contatos</caption>
             <thead class="thead-dark">
                 <tr>
@@ -65,3 +68,20 @@
     <p></p>
     <a class="btn btn-success" href="<?php echo base_url() . 'home'; ?>">Voltar</a>
 </div>
+   <script type="text/javascript">
+$(document).ready(function () {
+        $('#contatos').DataTable({
+            language: {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
+                },
+                iDisplayLength: 10,
+                dom: 'Bfrtip',
+    buttons: [
+        'copy',
+        'excel',
+        'print'
+    ]
+        });
+    });
+
+    </script>
