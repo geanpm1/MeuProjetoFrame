@@ -52,7 +52,7 @@
                 <?php else: ?>
                     <?php foreach ($contatos as $row): ?>
                         <tr>
-                            <th scope="row"><?php echo $row->nome; ?></th>
+                            <td><?php echo $row->nome; ?></td>
                             <td><?php echo $row->email; ?></td>
                             <td>
                                 <a class="btn btn-success" href="<?php echo base_url() . 'contato/editar/' . $row->id; ?>">Editar</a>
