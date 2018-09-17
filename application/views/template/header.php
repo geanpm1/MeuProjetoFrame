@@ -6,13 +6,19 @@ and open the template in the editor.
 -->
 <html>
     <head>
+    <div align="center"  <a href='https://app.umbler.com/u/7kl655zk'>
+	<img src='https://static.umbler.com/brand/umbler-badges/umbler-badge-hostedby-dark-bg.png' 
+ width='20%' alt='Hosted by Umbler'>
+        </a>   </div>
        <!-- <meta charset="UTF-8"> -->
         <title>Meu Projeto Framework</title>
+        
         <!-- <responsivo para tela do celular> -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--Bootstrap-->
         <link href="<?php echo base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/bootstrap-grid.min.css')?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/style.css')?>" rel="stylesheet">
         
         
         <!-- Datatables-->

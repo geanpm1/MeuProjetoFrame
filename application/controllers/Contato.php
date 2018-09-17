@@ -24,6 +24,7 @@ class Contato extends CI_Controller {
     function inserir(){
         $dados['nome'] = $this->input->post('nome');
         $dados['email'] = $this->input->post('email');
+        $dados['funcao'] = $this->input->post('funcao');
         $this->contatos->inserir($dados);
         redirect('contato');
     }
@@ -41,6 +42,7 @@ class Contato extends CI_Controller {
         $data['id'] = $this->input->post('id');
         $data['nome'] = $this->input->post('nome');
         $data['email'] = $this->input->post('email');
+        $data['funcao'] = $this->input->post('funcao');
         $this->contatos->atualizar($data);
         redirect('contato');
     }

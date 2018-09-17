@@ -35,5 +35,10 @@ class Contatos_model extends CI_Model {
         $this->db->set($data);
         return $this->db->update('contatos');
     }
+    
+      function inserir($funcao) {
+        return $this->db->insert('contatos', $funcao);
+    }
+    
 
 }

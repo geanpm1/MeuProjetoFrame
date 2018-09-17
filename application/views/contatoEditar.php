@@ -22,7 +22,11 @@
             <label>e-mail</label>
             <input name="email" type="email" value="<?php echo $contatoEditar[0]->email; ?>" required/>
             <p></p>
+            <label>funcao</label>
+            <input name="funcao" type="funcao" value="<?php echo $contatoEditar[0]->funcao; ?>" required/>
+            <p></p>
             <input class="btn btn-success" type="submit" value="Salvar"/>
+            
             <?php form_close(); ?>
             <p></p>
             <a a class="btn btn-danger"href="<?php echo base_url() . 'contato'; ?>">Cancelar</a>
