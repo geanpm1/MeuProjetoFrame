@@ -11,30 +11,31 @@
 //        echo $completo;
             echo "<p>";
             ?>
-            <h2>Contato</h2> 
-            <?php echo form_open('contato/inserir'); ?>
+            <h2>Usuario</h2> 
+            <?php echo form_open('usuario/inserir'); ?>
             <div class="form-group">
-                <label for="nome">Nome</label>
-                <input class="form-control" type="text" id="nome" name="nome" type="text" required/>
+                <label for="nomeUsuario">Nome Usuario</label>
+                <input class="form-control" type="text" id="nomeUsuario" name="nomeUsuario" placeholder="Insira seu Nome!"  required/>
             </div>    
-
             <div class="form-group">
-                <label for="email">e-mail</label>
-                <input id="email" class="form-control" name="email" type="email" required/>
-            </div>
-
-
+                <label for="user">Usuario</label>
+                <input class="form-control" type="text" id="user" name="user" placeholder="Usado para fazer login" required/>
+            </div>    
             <div class="form-group">
-                <label for="idfuncao">Funcao</label>
-                <select class="form-control" required="required" name="idfuncao" id="idfuncao">
-                    <option value="" >Selecionar Função ...</option>
-                    <?php foreach ($funcao as $funcao): ?>
-                        <option value="<?php echo $funcao->idfuncao; ?>"><?php echo $funcao->nomefuncao; ?></option>
-                    <?php endforeach ?>
+                <label for="senha">Senha</label>
+                <input class="form-control" type="password" placeholder="Minimo=8 Maximo=32 caracteres!" id="senha" name="senha"  minlength="8" maxlength="32" required/>
+            </div>    
+            
+            <div class="form-group">
+                <label for="perfilAcesso">Perfil</label>
+                <select class="form-control" required="required" name="perfilAcesso" id="perfilAcesso">
+                    <option value="" >Selecionar Perfil ...</option>
+                        <option value="ADM">Administrador</option>
+                        <option value="USER">Usuario</option>
                 </select>
             </div>
-
-
+            
+         
             <input class="btn btn-success" type="submit" value="Salvar"/>
             <input class="btn btn-danger" type="reset" value="Limpar"/>
             <input class="btn btn-dark" id="btn-lista" value="Mostrar lista"/>
@@ -44,35 +45,35 @@
             <div id="div-lista" class="hide">
         <!--        <table class="table table-striped table-dark"  >-->
                 <!--Datatables-->
-                <table id="contatos" class="table table-striped table-bordered" style="width:100%">
+                <table id="usuari" class="table table-striped table-bordered" style="width:100%">
 
-                    <caption>Contatos</caption>
+                    <caption>Usuario</caption>
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Nome</th>
-                            <th scope="col">e-mail</th>
-                            <th scope="col">Função</th>
+                           <th scope="col">Nome Usuario</th>
+                           <th scope="col">Usuario</th>
+                           <th scope="col">Perfil Acesso</th>
                         </tr>
 
                     </thead>
                     <tbody>
 
 
-                        <?php if ($contatos == FALSE): ?>
+                        <?php if ($usuario == FALSE): ?>
                             <tr>
-                                <td>Nenhum Contato Encontrado!</td></tr>
+                                <td>Nenhum Usuario Encontrado!</td></tr>
                         <?php else: ?>
-                            <?php foreach ($contatos as $row): ?>
+                            <?php foreach ($usuario as $row): ?>
                                 <tr>
-                                    <td><?php echo $row->nome; ?></td>
-                                    <td><?php echo $row->email; ?></td>
-                                    <td><?php echo $row->nomefuncao; ?></td>
+                                    <td><?php echo $row->nomeUsuario; ?></td>
+                                    <td><?php echo $row->user; ?></td>
+                                    <td><?php echo $row->perfilAcesso; ?></td>
                                     <td>
-
-                                        <a class="btn btn-success" href="<?php echo base_url() . 'contato/editar/' . $row->id; ?>">Editar</a>
+                                      
+                                        <a class="btn btn-success" href="<?php echo base_url() . 'usuario/editar/' . $row->idusuario; ?>">Editar</a>
                                         | 
-                                        <a class="btn btn-danger" href="<?php echo base_url() . 'contato/excluir/' . $row->id; ?>">Excluir</a>
-
+                                        <a class="btn btn-danger" href="<?php echo base_url() . 'usuario/excluir/' . $row->idusuario; ?>">Excluir</a>
+                                      
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -89,7 +90,7 @@
                 $("#div-lista").toggleClass("hide");
             });
             $(document).ready(function () {
-                $('#contatos').DataTable({
+                $('#usuario').DataTable({
                     language: {
                         "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
                     },

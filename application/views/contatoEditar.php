@@ -22,10 +22,18 @@
             <label>e-mail</label>
             <input name="email" type="email" value="<?php echo $contatoEditar[0]->email; ?>" required/>
             <p></p>
-            <label>funcao</label>
-            <input name="funcao" type="funcao" value="<?php echo $contatoEditar[0]->funcao; ?>" required/>
-            <p></p>
+             <div class="form-group">
+                <label for="idfuncao">Funcao</label>
+                <select class="form-control" required="required" name="idfuncao" id="idfuncao">
+                    <?php foreach ($funcao as $funcao): ?>
+                        <option value="<?php echo $funcao->idfuncao; ?>" <?php if ($funcao->idfuncao === $contatoEditar[0]->idfuncao) echo "selected" ?>><?php echo $funcao->nomefuncao; ?></option>
+                    <?php endforeach ?>
+                </select>
+            </div>
+            
+            
             <input class="btn btn-success" type="submit" value="Salvar"/>
+            
             
             <?php form_close(); ?>
             <p></p>

@@ -6,32 +6,27 @@ and open the template in the editor.
 -->
 <html>
     <head>
-    <div align="center"  <a href='https://app.umbler.com/u/7kl655zk'>
-	<img src='https://static.umbler.com/brand/umbler-badges/umbler-badge-hostedby-dark-bg.png' 
- width='20%' alt='Hosted by Umbler'>
-        </a>   </div>
-       <!-- <meta charset="UTF-8"> -->
+
+        <!-- <meta charset="UTF-8"> -->
         <title>Meu Projeto Framework</title>
-        
-        <!-- <responsivo para tela do celular> -->
+
+<!-- <responsivo para tela do celular> -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--Bootstrap-->
-        <link href="<?php echo base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
-        <link href="<?php echo base_url('assets/css/bootstrap-grid.min.css')?>" rel="stylesheet">
-        <link href="<?php echo base_url('assets/css/style.css')?>" rel="stylesheet">
-        
-        
+        <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/bootstrap-grid.min.css') ?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet">
+
         <!-- Datatables-->
-<!--        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css"><font></font>
-                -->
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.10.18/af-2.3.0/b-1.5.2/b-flash-1.5.2/b-html5-1.5.2/b-print-1.5.2/r-2.2.2/datatables.min.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     
-   
-        
+        <!--        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css"><font></font>
+        -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.10.18/af-2.3.0/b-1.5.2/b-flash-1.5.2/b-html5-1.5.2/b-print-1.5.2/r-2.2.2/datatables.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
     </head>
     <body>
-       
-    
+        <div align="center">  <a href='https://app.umbler.com/u/7kl655zk'>
+                <img src='https://static.umbler.com/brand/umbler-badges/umbler-badge-hostedby-dark-bg.png' 
+                     width='20%' alt='Hosted by Umbler'>
+            </a>   
+        </div>
