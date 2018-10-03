@@ -17,7 +17,6 @@ class Usuario extends CI_Controller {
         $dados['acronico'] = "MPF";
         $dados['completo'] = "Meu Projeto Framework";
         $dados['usuario'] = $this->usuario->listar();
-        $lista['usuario_teste'] = $this->usuario->listar();
         $this->load->view('usuario',$dados);
         $this->load->view('template/footer');
     }
@@ -40,7 +39,15 @@ class Usuario extends CI_Controller {
     
     public function excluir($idusuario) {
         $this->usuario->deletar($idusuario);
-        redirect('usuario');
+        $result = $this->usuario->atualizar($data);
+        if ($result == true) {
+            $this->session->set_flashdata('excluir', 'msg');
+            redirect('usuario');
+        }else {
+            $this->session->set_flashdata('excluirF', 'msg');
+            redirect('usuario');
+        }
+        
         
     }
            
@@ -61,8 +68,14 @@ class Usuario extends CI_Controller {
         $data['user'] = mb_convert_case($this->input->post('user'),MB_CASE_LOWER);
         $data['senha'] = md5($this->input->post('senha'));
         $data['perfilAcesso'] = mb_convert_case($this->input->post('perfilAcesso'),MB_CASE_LOWER);
-        $this->usuario->atualizar($data);
-        redirect('usuario');
+        $result = $this->usuario->atualizar($data);
+        if ($result == true) {
+            $this->session->set_flashdata('sucessoA', 'msg');
+            redirect('usuario');
+        }else {
+            $this->session->set_flashdata('falhaA', 'msg');
+            redirect('usuario');
+        }
     }
     
     
