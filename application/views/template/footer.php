@@ -89,9 +89,9 @@ and open the template in the editor.
             stackup_spacing: 10 // spacing between consecutively stacked growls.
         });
     </script>
-    <?php } elseif ($this->session->flashdata('excluir')) { ?>
+    <?php } elseif ($this->session->flashdata('excluirS')) { ?>
     <script>
-        $.bootstrapGrowl("Cadastro excluido com sucesso!", {
+        $.bootstrapGrowl("Excluido com sucesso!", {
             ele: 'body', // which element to append to
             type: 'success', // (null, 'info', 'danger', 'success')
             offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
@@ -102,11 +102,11 @@ and open the template in the editor.
             stackup_spacing: 10 // spacing between consecutively stacked growls.
         });
     </script>
-<?php } elseif ($this->session->flashdata('excluirF')) { ?>
+<?php } elseif ($this->session->flashdata('excluirE')) { ?>
     <script>
         $.bootstrapGrowl("Erro ao excluir!", {
             ele: 'body', // which element to append to
-            type: 'danger', // (null, 'info', 'danger', 'success')
+            type: ' danger', // (null, 'info', 'danger', 'success')
             offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
             align: 'right', // ('left', 'right', or 'center')
             width: 250, // (integer, or 'auto')

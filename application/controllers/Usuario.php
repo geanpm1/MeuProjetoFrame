@@ -38,16 +38,20 @@ class Usuario extends CI_Controller {
     
     
     public function excluir($idusuario) {
-        $this->usuario->deletar($idusuario);
-        $result = $this->usuario->atualizar($data);
+        
+        $result = $this->usuario->deletar($idusuario);
         if ($result == true) {
-            $this->session->set_flashdata('excluir', 'msg');
+            $this->session->set_flashdata('excluirS', 'msg');
             redirect('usuario');
         }else {
-            $this->session->set_flashdata('excluirF', 'msg');
+            $this->session->set_flashdata('excluirE', 'msg');
             redirect('usuario');
+            if ($result == true) {
+            $this->session->set_flashdata('sucessoA', 'msg');
+            redirect('usuario');
+           }
         }
-        
+       
         
     }
            
@@ -60,6 +64,7 @@ class Usuario extends CI_Controller {
         $this->load->view('template/header');
         $this->load->view('usuarioEditar' , $data);
          $this->load->view('template/header');
+         
     }
     
     public function atualizar(){

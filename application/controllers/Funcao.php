@@ -21,15 +21,27 @@ class Funcao extends CI_Controller {
         $this->load->view('template/footer');
     }
     public function excluir($idfuncao) {
-        $this->funcao->deletar($idfuncao);
-        redirect('funcao');
+        $result = $this->funcao->deletar($idfuncao);
+        if ($result == true) {
+            $this->session->set_flashdata('excluirS', 'msg');
+            redirect('funcao');
+        } else {
+            $this->session->set_flashdata('excluirE');
+            redirect('funcao');
+        }
         
     }
     
     function inserir(){
         $dados['nomefuncao'] = mb_convert_case($this->input->post('funcao'),MB_CASE_UPPER);
-        $this->funcao->inserir($dados);
-        redirect('funcao');
+        $result = $this->funcao->inserir($dados);
+        if ($result == true) {
+            $this->session->set_flashdata('sucesso', 'msg');
+            redirect('funcao');
+        }else {
+            $this->session->set_flashdata('falha', 'msg');
+            redirect('funcao');
+        }
     }
     
     public function editar($idfuncao){
@@ -46,7 +58,13 @@ class Funcao extends CI_Controller {
         $data['idfuncao'] = $this->input->post('idfuncao');
         $data['nomefuncao'] = mb_convert_case($this->input->post('nomefuncao'),MB_CASE_UPPER);
         $this->funcao->atualizar($data);
-        redirect('funcao');
+        if ($result == true) {
+            $this->session->set_flashdata('falhaA', 'msg');
+            redirect('funcao');
+        } else {
+            $this->session->set_flashdata('sucessoA', 'msg');
+            redirect('funcao');
+        }
     }
     
     
